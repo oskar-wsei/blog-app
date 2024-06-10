@@ -1,0 +1,45 @@
+@page
+@model BlogApp.WebAdmin.Pages.Articles.ArticlesIndexPage
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <h1 class="display-4">Articles</h1>
+    
+    <a class="btn btn-dark" asp-page="Create">New article</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Author id</td>
+            <td>Title</td>
+            <td>Content</td>
+            <td>Created at</td>
+            <td>Updated at</td>
+            <td>Actions</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var article in Model.Articles)
+        {
+            <tr>
+                <td>@article.Id</td>
+                <td>@article.AuthorId</td>
+                <td>@article.Title</td>
+                <td>@article.Content</td>
+                <td>@article.CreatedAt</td>
+                <td>@article.UpdatedAt</td>
+                <td>
+                    <a asp-page="Update" asp-route-id="@article.Id" class="btn btn-secondary">Edit</a>
+                    <form asp-page="Delete" asp-route-id="@article.Id" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

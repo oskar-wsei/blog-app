@@ -1,0 +1,24 @@
+@page
+@model BlogApp.WebAdmin.Pages.Articles.ArticleCreatePage
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Form.Title" class="form-label">Title</label>
+            <input asp-for="Form.Title" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Form.Content" class="form-label">Content</label>
+            <input asp-for="Form.Content" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Form.AuthorId" class="form-label">Author id</label>
+            <input asp-for="Form.AuthorId" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

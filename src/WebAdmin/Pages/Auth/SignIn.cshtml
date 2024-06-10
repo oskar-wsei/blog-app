@@ -1,0 +1,27 @@
+@page
+@model WebAdmin.Pages.Auth.AuthSignInPage
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sign In</h1>
+    
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Form.Username" class="form-label">Username</label>
+            <input asp-for="Form.Username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Form.Password" class="form-label">Password</label>
+            <input asp-for="Form.Password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+
+    @if (Model.ErrorMessage is not null)
+    {
+        <div class="alert alert-danger">@Model.ErrorMessage</div>
+    }
+</div>

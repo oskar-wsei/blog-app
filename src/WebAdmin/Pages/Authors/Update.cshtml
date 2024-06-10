@@ -1,0 +1,22 @@
+@page "{id:int}"
+@model BlogApp.WebAdmin.Pages.Authors.AuthorUpdatePage
+
+@{
+    Layout = "_Layout";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Form.FirstName" class="form-label">First name</label>
+        <input asp-for="Form.FirstName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.LastName" class="form-label">Last name</label>
+        <input asp-for="Form.LastName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Description" class="form-label">Description</label>
+        <input asp-for="Form.Description" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <AssemblyName>BlogApp.WebAdmin</AssemblyName>
+        <RootNamespace>BlogApp.WebAdmin</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="RestSharp" />
+    </ItemGroup>
+
+</Project>

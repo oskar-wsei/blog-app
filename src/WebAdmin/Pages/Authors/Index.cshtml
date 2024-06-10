@@ -1,0 +1,45 @@
+@page
+@model BlogApp.WebAdmin.Pages.Authors.AuthorIndexPage
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <h1 class="display-4">Authors</h1>
+    
+    <a class="btn btn-dark" asp-page="Create">New author</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Description</td>
+            <td>Created at</td>
+            <td>Updated at</td>
+            <td>Actions</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var author in Model.Authors)
+        {
+            <tr>
+                <td>@author.Id</td>
+                <td>@author.FirstName</td>
+                <td>@author.LastName</td>
+                <td>@author.Description</td>
+                <td>@author.CreatedAt</td>
+                <td>@author.UpdatedAt</td>
+                <td>
+                    <a asp-page="Update" asp-route-id="@author.Id" class="btn btn-secondary">Edit</a>
+                    <form asp-page="Delete" asp-route-id="@author.Id" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
